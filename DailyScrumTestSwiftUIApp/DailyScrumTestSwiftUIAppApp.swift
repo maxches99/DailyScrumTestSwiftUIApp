@@ -1,0 +1,17 @@
+//
+//  DailyScrumTestSwiftUIAppApp.swift
+//  DailyScrumTestSwiftUIApp
+//
+//  Created by Max Chesnikov on 14.03.2021.
+//
+
+import SwiftUI
+
+@main
+struct DailyScrumTestSwiftUIAppApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
