@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Neumorphic
 
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
@@ -14,15 +15,17 @@ struct ScrumsView: View {
     @State private var newScrumData = DailyScrum.Data()
     let saveAction: () -> Void
     var body: some View {
-        List {
+		ScrollView {
+		LazyVStack(pinnedViews: .sectionHeaders) {
             ForEach(scrums) { scrum in
                 NavigationLink(destination: DetailView(scrum: binding(for: scrum))) {
                     CardView(scrum: scrum)
                 }
-                .listRowBackground(scrum.color)
+				.accentColor(scrum.color)
+				.padding([.top, .leading, .trailing])
             }
         }
-		.listStyle(InsetGroupedListStyle())
+		.listStyle(SidebarListStyle())
         .navigationTitle("Ебаные митинги")
         .navigationBarItems(trailing: Button(action: {
             isPresented = true
@@ -44,7 +47,7 @@ struct ScrumsView: View {
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
-        }
+		}}
     }
 
     private func binding(for scrum: DailyScrum) -> Binding<DailyScrum> {
@@ -59,6 +62,7 @@ struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ScrumsView(scrums: .constant(DailyScrum.data), saveAction: {})
-        }
+		}
+		.background(Color.Neumorphic.main)
     }
 }

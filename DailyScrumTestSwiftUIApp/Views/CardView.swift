@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Neumorphic
 
 struct CardView: View {
     let scrum: DailyScrum
@@ -29,7 +30,7 @@ struct CardView: View {
             .font(.caption)
         }
         .padding()
-        .foregroundColor(scrum.color.accessibleFontColor)
+		.background(RoundedRectangle(cornerRadius: 30).fill(Color(.systemBackground)).softInnerShadow(RoundedRectangle(cornerRadius: 30)))
     }
 }
 

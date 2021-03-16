@@ -21,5 +21,6 @@ struct DailyScrumTestSwiftUIAppApp: App {
                 data.load()
             }
         }
+		
     }
 }

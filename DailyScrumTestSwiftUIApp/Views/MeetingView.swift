@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVFoundation
+import Neumorphic
 
 struct MeetingView: View {
     @Binding var scrum: DailyScrum
@@ -19,13 +20,13 @@ struct MeetingView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 16.0)
                 .fill(scrum.color)
+				.blur(radius: 10)
             VStack {
                 MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, scrumColor: scrum.color)
                 MeetingTimerView(speakers: scrumTimer.speakers, isRecording: isRecording, scrumColor: scrum.color)
                 MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
         }
-        .padding()
         .foregroundColor(scrum.color.accessibleFontColor)
         .onAppear {
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)

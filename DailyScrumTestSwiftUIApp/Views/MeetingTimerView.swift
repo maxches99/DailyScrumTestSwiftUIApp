@@ -40,6 +40,7 @@ struct MeetingTimerView: View {
         ZStack {
             Circle()
                 .strokeBorder(lineWidth: 24, antialiased: true)
+				.blur(radius: 3)
             VStack {
                 Text(currentSpeaker)
                     .font(.title)
@@ -57,6 +58,7 @@ struct MeetingTimerView: View {
                     SpeakerArc(speakerIndex: index, totalSpeakers: speakers.count)
                         .rotation(Angle(degrees: -90))
                         .stroke(scrumColor, lineWidth: 12)
+						.blur(radius: 3)
                 }
             }
         }
