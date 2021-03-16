@@ -19,7 +19,7 @@ struct MeetingHeaderView: View {
         secondsRemaining / 60
     }
     private var minutesRemainingMetric: String {
-        minutesRemaining == 1 ? "minute" : "minutes"
+        minutesRemaining == 1 ? "минута" : "минут"
     }
     let scrumColor: Color
 
@@ -29,13 +29,13 @@ struct MeetingHeaderView: View {
                 .progressViewStyle(ScrumProgressViewStyle(scrumColor: scrumColor))
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Seconds Elapsed")
+                    Text("Прошло секунд")
                         .font(.caption)
                     Label("\(secondsElapsed)", systemImage: "hourglass.bottomhalf.fill")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("Seconds Remaining")
+                    Text("Осталось секунд")
                         .font(.caption)
                     HStack {
                         Text("\(secondsRemaining)")
@@ -45,7 +45,7 @@ struct MeetingHeaderView: View {
             }
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("Time remaining"))
+        .accessibilityLabel(Text("Описание времени"))
         .accessibilityValue(Text("\(minutesRemaining) \(minutesRemainingMetric)"))
         .padding([.top, .horizontal])
     }

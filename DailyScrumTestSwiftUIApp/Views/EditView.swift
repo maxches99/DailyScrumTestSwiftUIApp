@@ -12,21 +12,21 @@ struct EditView: View {
     @State private var newAttendee = ""
     var body: some View {
         List {
-            Section(header: Text("Meeting Info")) {
-                TextField("Title", text: $scrumData.title)
+            Section(header: Text("Ебаная информация")) {
+                TextField("Название", text: $scrumData.title)
                 HStack {
                     Slider(value: $scrumData.lengthInMinutes, in: 5...30, step: 1.0) {
-                        Text("Length")
+                        Text("Длина пиздилова")
                     }
-                    .accessibilityValue(Text("\(Int(scrumData.lengthInMinutes)) minutes"))
+                    .accessibilityValue(Text("\(Int(scrumData.lengthInMinutes)) минут"))
                     Spacer()
-                    Text("\(Int(scrumData.lengthInMinutes)) minutes")
+                    Text("\(Int(scrumData.lengthInMinutes)) минут")
                         .accessibilityHidden(true)
                 }
-                ColorPicker("Color", selection: $scrumData.color)
-                    .accessibilityLabel(Text("Color picker"))
+                ColorPicker("Ебаный цвет", selection: $scrumData.color)
+                    .accessibilityLabel(Text("Выбор цвета"))
             }
-            Section(header: Text("Attendees")) {
+            Section(header: Text("Уебские участники")) {
                 ForEach(scrumData.attendees, id: \.self) { attendee in
                     Text(attendee)
                 }
@@ -34,7 +34,7 @@ struct EditView: View {
                     scrumData.attendees.remove(atOffsets: indices)
                 }
                 HStack {
-                    TextField("New Attendee", text: $newAttendee)
+                    TextField("Новый участник", text: $newAttendee)
                     Button(action: {
                         withAnimation {
                             scrumData.attendees.append(newAttendee)
@@ -42,7 +42,7 @@ struct EditView: View {
                         }
                     }) {
                         Image(systemName: "plus.circle.fill")
-                            .accessibilityLabel(Text("Add attendee"))
+                            .accessibilityLabel(Text("Добавить участника"))
                     }
                     .disabled(newAttendee.isEmpty)
                 }

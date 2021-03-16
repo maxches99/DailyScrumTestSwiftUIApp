@@ -22,7 +22,8 @@ struct ScrumsView: View {
                 .listRowBackground(scrum.color)
             }
         }
-        .navigationTitle("Эти ебаные конференции")
+		.listStyle(InsetGroupedListStyle())
+        .navigationTitle("Ебаные митинги")
         .navigationBarItems(trailing: Button(action: {
             isPresented = true
         }) {

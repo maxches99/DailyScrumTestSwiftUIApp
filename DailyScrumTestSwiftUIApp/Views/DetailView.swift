@@ -44,7 +44,7 @@ struct DetailView: View {
             }
             Section(header: Text("Исторические пиздилова")) {
                 if scrum.history.isEmpty {
-                    Label("No meetings yet", systemImage: "calendar.badge.exclamationmark")
+                    Label("Нет исторических пиздилов", systemImage: "calendar.badge.exclamationmark")
                 }
                 ForEach(scrum.history) { history in
                     NavigationLink(

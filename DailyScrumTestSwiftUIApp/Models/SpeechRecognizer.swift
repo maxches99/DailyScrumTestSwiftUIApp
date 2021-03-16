@@ -15,7 +15,7 @@ struct SpeechRecognizer {
         var audioEngine: AVAudioEngine?
         var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
         var recognitionTask: SFSpeechRecognitionTask?
-        let speechRecognizer = SFSpeechRecognizer()
+        let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru"))
 
         deinit {
             reset()

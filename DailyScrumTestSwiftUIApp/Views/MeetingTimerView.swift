@@ -35,7 +35,7 @@ struct MeetingTimerView: View {
     let speakers: [ScrumTimer.Speaker]
     let isRecording: Bool
     var scrumColor: Color
-    private var currentSpeaker: String { speakers.first(where: { !$0.isCompleted })?.name ?? "Someone" }
+    private var currentSpeaker: String { speakers.first(where: { !$0.isCompleted })?.name ?? "Кто-то" }
     var body: some View {
         ZStack {
             Circle()
@@ -43,11 +43,11 @@ struct MeetingTimerView: View {
             VStack {
                 Text(currentSpeaker)
                     .font(.title)
-                Text("is speaking")
+                Text("говорит")
                 Image(systemName: isRecording ? "mic" : "mic.slash")
                     .font(.title)
                     .padding(.top)
-                    .accessibilityLabel(isRecording ? "with transcription" : "without transcription")
+                    .accessibilityLabel(isRecording ? "с транскрипцией" : "без транскрипции")
             }
             .accessibilityElement(children: .combine)
             .foregroundColor(scrumColor.accessibleFontColor)
