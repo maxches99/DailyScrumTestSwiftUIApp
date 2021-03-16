@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  DailyScrumTestSwiftUIApp
+
+  Created by Студия on 16.03.2021.
+  
+*/
+
+"Количество участников" = "Count of speakers";
+"Длина пиздилова" = "Length";
+"Ебаная информация" = "General information";
+"Попиздим" = "Talk";
+"Ебаный цвет" = "Color";
+"Уебские участники" = "Speakers";
+"Исторические пиздилова" = "History";
+"Нет исторических пиздилов" = "No history";
+"Изменить" = "Change";
+"Закрыть" = "Close";
+"Готово" = "Done";
+"Название" = "Name";
+"Новый участник" = "New speaker";
+"Добавить участника" = "Add speaker";
+"Больше нет участников" = "No more speakers";
+"Участник из" = "Speaker";
+"Последний участник" = "Last speakear";
+"Следующий участник" = "Next speaker";
+"минута" = "minute";
+"минут" = "minutes";
+"Прошло секунд" = "Seconds";
+"Осталось секунд" = "Seconds";
+"Описание времени" = "Description of time";
+"Ебаные митинги" = "Fucking conf";
+"Добавить" = "Add";
+"говорит" = "speaking";
+"Кто-то" = "Somebody";
+"с транскрипцией" = "with transcription";
+"без транскрипции" = "without transcription";
+"Транскрипция" = "Transcription";

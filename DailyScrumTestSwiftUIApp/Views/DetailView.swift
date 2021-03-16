@@ -13,38 +13,38 @@ struct DetailView: View {
     @State private var isPresented = false
     var body: some View {
         List {
-            Section(header: Text("Ебаная информация")) {
+			Section(header: Text("Ебаная информация".locale)) {
                 NavigationLink(
                     destination: MeetingView(scrum: $scrum)) {
-                        Label("Попиздим", systemImage: "timer")
+                        Label("Попиздим".locale, systemImage: "timer")
                             .font(.headline)
                             .foregroundColor(.accentColor)
-                            .accessibilityLabel(Text("Попиздим"))
+                            .accessibilityLabel(Text("Попиздим".locale))
                     }
                 HStack {
-                    Label("Длина пиздилова", systemImage: "clock")
+                    Label("Длина пиздилова".locale, systemImage: "clock")
                         .accessibilityLabel(Text("meeting length"))
                     Spacer()
-                    Text("\(scrum.lengthInMinutes) минут")
+                    Text("\(scrum.lengthInMinutes) минут".locale)
                 }
                 HStack {
-                    Label("Ебаный цвет", systemImage: "paintpalette")
+                    Label("Ебаный цвет".locale, systemImage: "paintpalette")
                     Spacer()
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(scrum.color)
                 }
                 .accessibilityElement(children: .ignore)
             }
-            Section(header: Text("Уебские участники")) {
+            Section(header: Text("Уебские участники".locale)) {
                 ForEach(scrum.attendees, id: \.self) { attendee in
                     Label(attendee, systemImage: "person")
-                        .accessibilityLabel(Text("person"))
+                        .accessibilityLabel(Text("Уебские участники".locale))
                         .accessibilityValue(Text(attendee))
                 }
             }
-            Section(header: Text("Исторические пиздилова")) {
+            Section(header: Text("Исторические пиздилова".locale)) {
                 if scrum.history.isEmpty {
-                    Label("Нет исторических пиздилов", systemImage: "calendar.badge.exclamationmark")
+                    Label("Нет исторических пиздилов".locale, systemImage: "calendar.badge.exclamationmark")
                 }
                 ForEach(scrum.history) { history in
                     NavigationLink(
@@ -58,7 +58,7 @@ struct DetailView: View {
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationBarItems(trailing: Button("Изменить") {
+        .navigationBarItems(trailing: Button("Изменить".locale) {
             isPresented = true
             data = scrum.data
         })
@@ -67,9 +67,9 @@ struct DetailView: View {
             NavigationView {
                 EditView(scrumData: $data)
                     .navigationTitle(scrum.title)
-                    .navigationBarItems(leading: Button("Cancel") {
+                    .navigationBarItems(leading: Button("Закрыть".locale) {
                         isPresented = false
-                    }, trailing: Button("Done") {
+                    }, trailing: Button("Готово".locale) {
                         isPresented = false
                         scrum.update(from: data)
                     })

@@ -38,9 +38,9 @@ struct ScrumsView: View {
 			.sheet(isPresented: $isPresented) {
 				NavigationView {
 					EditView(scrumData: $newScrumData)
-						.navigationBarItems(leading: Button("Dismiss") {
+						.navigationBarItems(leading: Button("Закрыть") {
 							isPresented = false
-						}, trailing: Button("Add") {
+						}, trailing: Button("Добавить") {
 							let newScrum = DailyScrum(title: newScrumData.title, attendees: newScrumData.attendees,
 													  lengthInMinutes: Int(newScrumData.lengthInMinutes), color: newScrumData.color)
 							scrums.append(newScrum)
