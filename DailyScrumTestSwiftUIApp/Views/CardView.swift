@@ -30,7 +30,11 @@ struct CardView: View {
             .font(.caption)
         }
         .padding()
-		.background(RoundedRectangle(cornerRadius: 30).fill(Color(.systemBackground)).softInnerShadow(RoundedRectangle(cornerRadius: 30)))
+		.background(
+			scrum.color
+				.blur(radius: 10)
+		)
+		.cornerRadius(30)
     }
 }
 
@@ -38,7 +42,6 @@ struct CardView_Previews: PreviewProvider {
     static var scrum = DailyScrum.data[0]
     static var previews: some View {
         CardView(scrum: scrum)
-            .background(scrum.color)
-            .previewLayout(.fixed(width: 400, height: 60))
+			.previewLayout(.sizeThatFits)
     }
 }
