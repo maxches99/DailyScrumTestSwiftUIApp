@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		214997572600F039001B294D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 214997592600F039001B294D /* Localizable.strings */; };
-		2149975D2600F2CB001B294D /* String+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149975C2600F2CB001B294D /* String+Locale.swift */; };
 		216E57252600ABD8004B9217 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 216E57242600ABD8004B9217 /* Neumorphic */; };
 		3EABB18D25FE6770007FCD66 /* DailyScrumTestSwiftUIAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EABB18C25FE6770007FCD66 /* DailyScrumTestSwiftUIAppApp.swift */; };
 		3EABB18F25FE6770007FCD66 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EABB18E25FE6770007FCD66 /* MeetingView.swift */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		214997582600F039001B294D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2149975B2600F03D001B294D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2149975C2600F2CB001B294D /* String+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Locale.swift"; sourceTree = "<group>"; };
 		3EABB18925FE6770007FCD66 /* DailyScrumTestSwiftUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyScrumTestSwiftUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EABB18C25FE6770007FCD66 /* DailyScrumTestSwiftUIAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrumTestSwiftUIAppApp.swift; sourceTree = "<group>"; };
 		3EABB18E25FE6770007FCD66 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 			children = (
 				3EABB1BB25FFF98A007FCD66 /* AVPlayer+Ding.swift */,
 				3EABB1B225FFF73A007FCD66 /* Color+Codable.swift */,
-				2149975C2600F2CB001B294D /* String+Locale.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -245,7 +242,6 @@
 				3EABB1CF2600012C007FCD66 /* SpeechRecognizer.swift in Sources */,
 				3EABB19E25FE69E8007FCD66 /* DailyScrum.swift in Sources */,
 				3EABB1BC25FFF98A007FCD66 /* AVPlayer+Ding.swift in Sources */,
-				2149975D2600F2CB001B294D /* String+Locale.swift in Sources */,
 				3EABB1C925FFFCEC007FCD66 /* ScrumData.swift in Sources */,
 				3EABB1D226000324007FCD66 /* HistoryView.swift in Sources */,
 				3EABB1CC25FFFF24007FCD66 /* MeetingTimerView.swift in Sources */,

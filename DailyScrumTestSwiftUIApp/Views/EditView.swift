@@ -12,21 +12,21 @@ struct EditView: View {
     @State private var newAttendee = ""
     var body: some View {
         List {
-            Section(header: Text("Ебаная информация".locale)) {
-                TextField("Название".locale, text: $scrumData.title)
+            Section(header: Text("Ебаная информация")) {
+                TextField("Название", text: $scrumData.title)
                 HStack {
                     Slider(value: $scrumData.lengthInMinutes, in: 5...30, step: 1.0) {
-                        Text("Длина пиздилова".locale)
+                        Text("Длина пиздилова")
                     }
-                    .accessibilityValue(Text("\(Int(scrumData.lengthInMinutes)) минут".locale))
+                    .accessibilityValue(Text("\(Int(scrumData.lengthInMinutes)) минут"))
                     Spacer()
-                    Text("\(Int(scrumData.lengthInMinutes)) минут".locale)
+                    Text("\(Int(scrumData.lengthInMinutes)) минут")
                         .accessibilityHidden(true)
                 }
-                ColorPicker("Ебаный цвет".locale, selection: $scrumData.color)
-                    .accessibilityLabel(Text("Выбор цвета".locale))
+                ColorPicker("Ебаный цвет", selection: $scrumData.color)
+                    .accessibilityLabel(Text("Выбор цвета"))
             }
-            Section(header: Text("Уебские участники".locale)) {
+            Section(header: Text("Уебские участники")) {
                 ForEach(scrumData.attendees, id: \.self) { attendee in
                     Text(attendee)
                 }

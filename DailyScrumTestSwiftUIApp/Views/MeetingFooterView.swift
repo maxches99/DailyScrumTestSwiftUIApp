@@ -18,8 +18,8 @@ struct MeetingFooterView: View {
         return speakers.dropLast().allSatisfy { $0.isCompleted }
     }
     private var speakerText: String {
-        guard let speakerNumber = speakerNumber else { return "Больше нет участников".locale }
-		return "Участник \(speakerNumber) из \(speakers.count)".locale
+        guard let speakerNumber = speakerNumber else { return "Больше нет участников" }
+		return "Участник \(speakerNumber) из \(speakers.count)"
     }
     var body: some View {
         VStack {
@@ -32,7 +32,7 @@ struct MeetingFooterView: View {
                     Button(action: skipAction) {
                         Image(systemName:"forward.fill")
                     }
-                    .accessibilityLabel(Text("Следующий участник".locale))
+                    .accessibilityLabel(Text("Следующий участник"))
                 }
             }
         }
