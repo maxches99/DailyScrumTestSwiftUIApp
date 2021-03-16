@@ -25,7 +25,7 @@ struct DetailView: View {
                     Label("Длина пиздилова", systemImage: "clock")
                         .accessibilityLabel(Text("meeting length"))
                     Spacer()
-                    Text("\(scrum.lengthInMinutes) minutes")
+                    Text("\(scrum.lengthInMinutes) минут")
                 }
                 HStack {
                     Label("Ебаный цвет", systemImage: "paintpalette")
