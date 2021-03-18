@@ -72,6 +72,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2172C2B8260378320064B615 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		3EABB18025FE6770007FCD66 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +98,7 @@
 		3EABB18B25FE6770007FCD66 /* DailyScrumTestSwiftUIApp */ = {
 			isa = PBXGroup;
 			children = (
+				2172C2B8260378320064B615 /* ViewModels */,
 				3EABB1C725FFFCB1007FCD66 /* Extensions */,
 				3EABB1C525FFFC56007FCD66 /* Views */,
 				3EABB1C625FFFC90007FCD66 /* Models */,

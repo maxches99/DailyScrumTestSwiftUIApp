@@ -12,9 +12,6 @@ struct EditView: View {
     @Binding var scrumData: DailyScrum.Data
     @State private var newAttendee = ""
     
-    var colors = ["Red", "Green", "Blue", "Tartan"]
-    @State private var selectedColor = "Red"
-    
     var body: some View {
         List {
             Section(header: Text("Ебаная информация")) {
@@ -30,14 +27,6 @@ struct EditView: View {
                 }
                 ColorPicker("Ебаный цвет", selection: $scrumData.color)
                     .accessibilityLabel(Text("Выбор цвета"))
-                DisclosureGroup("Выбор языка") {
-                    Picker("Выбор языка", selection: $selectedColor) {
-                        ForEach(Locale.isoLanguageCodes.compactMap { Locale.current.localizedString(forLanguageCode: $0) }, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                }
                 
             }
             Section(header: Text("Уебские участники")) {
