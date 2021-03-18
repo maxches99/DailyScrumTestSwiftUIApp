@@ -21,7 +21,7 @@ struct SpeakerArc: Shape {
     }
 
     func path(in rect: CGRect) -> Path {
-        let diameter = min(rect.size.width, rect.size.height) - 24.0
+        let diameter = min(rect.size.width, rect.size.height) - 14.0
         let radius = diameter / 2.0
         let center = CGPoint(x: rect.origin.x + rect.size.width / 2.0,
                              y: rect.origin.y + rect.size.height / 2.0)
@@ -39,8 +39,10 @@ struct MeetingTimerView: View {
     var body: some View {
         ZStack {
             Circle()
-                .strokeBorder(lineWidth: 24, antialiased: true)
-				.blur(radius: 3)
+                .strokeBorder(lineWidth: 14, antialiased: true)
+                .blur(radius: 3)
+            Circle()
+                .strokeBorder(lineWidth: 14, antialiased: true)
             VStack {
                 Text(currentSpeaker)
                     .font(.title)

@@ -15,7 +15,11 @@ struct SpeechRecognizer {
         var audioEngine: AVAudioEngine?
         var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
         var recognitionTask: SFSpeechRecognitionTask?
-        let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru"))
+        let speechRecognizer: SFSpeechRecognizer?
+        
+        init(identifier: String = "ru") {
+            speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru"))
+        }
 
         deinit {
             reset()
@@ -30,7 +34,11 @@ struct SpeechRecognizer {
         }
     }
 
-    private let assistant = SpeechAssist()
+    private let assistant: SpeechAssist
+    
+    init(identifier: String = "ru") {
+        assistant = SpeechAssist(identifier: identifier)
+    }
 
     func record(to speech: Binding<String>) {
         relay(speech, message: "Requesting access")
