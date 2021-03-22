@@ -41,14 +41,17 @@ class ScrumTimer: ObservableObject {
         secondsRemaining = lengthInSeconds
         activeSpeaker = speakerText
     }
+    
     func startScrum() {
         changeToSpeaker(at: 0)
     }
+    
     func stopScrum() {
         timer?.invalidate()
         timer = nil
         timerStopped = true
     }
+    
     func skipSpeaker() {
         changeToSpeaker(at: speakerIndex + 1)
     }

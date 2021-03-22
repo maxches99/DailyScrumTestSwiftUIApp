@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct SpeakerArc: Shape {
+    
     let speakerIndex: Int
+    
     let totalSpeakers: Int
+    
     private var degreesPerSpeaker: Double {
         360.0 / Double(totalSpeakers)
     }
+    
     private var startAngle: Angle {
         Angle(degrees: degreesPerSpeaker * Double(speakerIndex) + 1.0)
     }
+    
     private var endAngle: Angle {
         Angle(degrees: startAngle.degrees + degreesPerSpeaker - 1.0)
     }
@@ -32,10 +37,14 @@ struct SpeakerArc: Shape {
 }
 
 struct MeetingTimerView: View {
+    
     let speakers: [ScrumTimer.Speaker]
     let isRecording: Bool
+    
     var scrumColor: Color
+    
     private var currentSpeaker: String { speakers.first(where: { !$0.isCompleted })?.name ?? "Кто-то" }
+    
     var body: some View {
         ZStack {
             Circle()
@@ -69,8 +78,10 @@ struct MeetingTimerView: View {
 }
 
 struct MeetingTimerView_Preview: PreviewProvider {
+    
     static var speakers = [ScrumTimer.Speaker(name: "Kim", isCompleted: true), ScrumTimer.Speaker(name: "Bill", isCompleted: false)]
+    
     static var previews: some View {
-            MeetingTimerView(speakers: speakers, isRecording: true, scrumColor: Color("Design"))
-        }
+        MeetingTimerView(speakers: speakers, isRecording: true, scrumColor: Color("Design"))
+    }
 }

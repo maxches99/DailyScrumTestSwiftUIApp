@@ -49,6 +49,6 @@
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>“Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.”</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>“Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.”</string>
+	<string>We needed your voice to recording audio.</string>
 </dict>
 </plist>

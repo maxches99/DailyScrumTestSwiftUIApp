@@ -9,7 +9,9 @@ import SwiftUI
 import Neumorphic
 
 struct CardView: View {
+    
     let scrum: DailyScrum
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(scrum.title)
@@ -18,23 +20,23 @@ struct CardView: View {
             HStack {
                 Label("\(scrum.attendees.count)", systemImage: "person.3")
                     .accessibilityElement(children: .ignore)
-					.accessibilityLabel(Text("Количество участников"))
+                    .accessibilityLabel(Text("Количество участников"))
                     .accessibilityValue(Text("\(scrum.attendees.count)"))
                 Spacer()
                 Label("\(scrum.lengthInMinutes)", systemImage: "clock")
                     .padding(.trailing, 20)
                     .accessibilityElement(children: .ignore)
-					.accessibilityLabel(Text("Длина пиздилова"))
-					.accessibilityValue(Text("\(scrum.lengthInMinutes) минут"))
+                    .accessibilityLabel(Text("Длина пиздилова"))
+                    .accessibilityValue(Text("\(scrum.lengthInMinutes) минут"))
             }
             .font(.caption)
         }
         .padding()
-		.background(
-			scrum.color
-				.blur(radius: 10)
-		)
-		.cornerRadius(30)
+        .background(
+            scrum.color
+                .blur(radius: 10)
+        )
+        .cornerRadius(30)
     }
 }
 
@@ -42,6 +44,6 @@ struct CardView_Previews: PreviewProvider {
     static var scrum = DailyScrum.data[0]
     static var previews: some View {
         CardView(scrum: scrum)
-			.previewLayout(.sizeThatFits)
+            .previewLayout(.sizeThatFits)
     }
 }

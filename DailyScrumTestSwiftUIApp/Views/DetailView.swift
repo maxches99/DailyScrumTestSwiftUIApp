@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct DetailView: View {
+    
     @Binding var scrum: DailyScrum
+    
     @State private var data: DailyScrum.Data = DailyScrum.Data()
     @State private var isPresented = false
+    
     var body: some View {
         List {
-			Section(header: Text("Ебаная информация")) {
+            Section(header: Text("Ебаная информация")) {
                 NavigationLink(
                     destination: MeetingView(scrum: $scrum)) {
-                        Label("Попиздим", systemImage: "timer")
-                            .font(.headline)
-                            .foregroundColor(.accentColor)
-                            .accessibilityLabel(Text("Попиздим"))
-                    }
+                    Label("Попиздим", systemImage: "timer")
+                        .font(.headline)
+                        .foregroundColor(.accentColor)
+                        .accessibilityLabel(Text("Попиздим"))
+                }
                 HStack {
                     Label("Длина пиздилова", systemImage: "clock")
                         .accessibilityLabel(Text("meeting length"))

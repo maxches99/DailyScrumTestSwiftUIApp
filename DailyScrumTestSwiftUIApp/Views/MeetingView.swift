@@ -10,12 +10,18 @@ import AVFoundation
 import Neumorphic
 
 struct MeetingView: View {
+    
     @Binding var scrum: DailyScrum
+    
     @StateObject var scrumTimer = ScrumTimer()
+    
     @State private var transcript = ""
     @State private var isRecording = false
+    
     private let speechRecognizer = SpeechRecognizer()
+    
     var player: AVPlayer { AVPlayer.sharedDingPlayer }
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16.0)
